@@ -257,7 +257,7 @@ GicV3DxeInitialize (
     MmioOr32 (mGicDistributorBase + ARM_GIC_ICDDCR, ARM_GIC_ICDDCR_ARE);
   }
 
-  for (Index = 0; Index < mGicNumInterrupts; Index++) {
+  for (Index = 32; Index < mGicNumInterrupts; Index++) {
     GicV3DisableInterruptSource (&gHardwareInterruptV3Protocol, Index);
 
     // Set Priority
